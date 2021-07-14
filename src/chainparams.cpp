@@ -617,17 +617,17 @@ public:
         bech32_hrp = "tf";
 
         // (!) after prefixes set
-        consensus.foundationShareScript = GetScriptForDestination(DecodeDestination("7Q2nZCcKnxiRiHSNQtLB27RA5efxm2cE7w", *this));
+        consensus.foundationShareScript = GetScriptForDestination(DecodeDestination("76V7EJ1YLQvHNQ1BUcGMNrWFbgZ5nUxnDu", *this));
         consensus.foundationShare = 10; // old style - just percents
         consensus.foundationShareDFIP1 = 199 * COIN / 10 / 200; // 19.9 DFI @ 200 per block (rate normalized to (COIN == 100%)
 
         // now it is for devnet and regtest only, 2 first of genesis MNs acts as foundation members
-        consensus.foundationMembers.emplace(GetScriptForDestination(DecodeDestination("7M3g9CSERjLdXisE5pv2qryDbURUj9Vpi1", *this)));
-        consensus.foundationMembers.emplace(GetScriptForDestination(DecodeDestination("7L29itepC13pgho1X2y7mcuf4WjkBi7x2w", *this)));
+        consensus.foundationMembers.emplace(GetScriptForDestination(DecodeDestination("7Ns5syhfQPtciYLL7w9xZKWsjPAD9ft1Fr", *this)));
+        consensus.foundationMembers.emplace(GetScriptForDestination(DecodeDestination("7JyKFDBxx1Trfmphj7YZo9yswdtkGdcqvm", *this)));
 
         // owner base58, operator base58
-        vMasternodes.push_back({"7M3g9CSERjLdXisE5pv2qryDbURUj9Vpi1", "7Grgx69MZJ4wDKRx1bBxLqTnU9T3quKW7n"});
-        vMasternodes.push_back({"7L29itepC13pgho1X2y7mcuf4WjkBi7x2w", "773MiaEtQK2HAwWj55gyuRiU8tSwowRTTW"});
+        vMasternodes.push_back({"7Ns5syhfQPtciYLL7w9xZKWsjPAD9ft1Fr", "7LGETL4iLsUkc2hpd5d2LnMxLmfgB5SxtA"});
+        vMasternodes.push_back({"7JyKFDBxx1Trfmphj7YZo9yswdtkGdcqvm", "7HeV9pEG97s3WmFrSKVd83ZkdZMvZiFA9X"});
         vMasternodes.push_back({"75Wramp2iARchHedXcn1qRkQtMpSt9Mi3V", "7Ku81yvqbPkxpWjZpZWZZnWydXyzJozZfN"});
         vMasternodes.push_back({"7LfqHbyh9dBQDjWB6MxcWvH2PBC5iY4wPa", "75q6ftr3QGfBT3DBu15fVfetP6duAgfhNH"});
 
