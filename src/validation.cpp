@@ -1803,6 +1803,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
         pburnHistoryDB->ForEachAccountHistory(shouldContinueToNextAccountHistory, startKey);
 
         for (uint32_t i = block.vtx.size(); i <= lastTxOut; ++i) {
+            LogPrintf("pr-530::debug:: i => %d, lastTxOut => %d", lastTxOut);
             pburnHistoryDB->EraseAccountHistory({Params().GetConsensus().burnAddress, static_cast<uint32_t>(Params().GetConsensus().EunosHeight), i});
         }
     }
