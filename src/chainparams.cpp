@@ -643,8 +643,18 @@ public:
         genesis = CreateGenesisBlock(1585132338, 0x1d00ffff, 1, initdist, CreateGenesisMasternodes()); // old=1296688602
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000099a168f636895a019eacfc1798ec54c593c015cfc5aac1f12817f7ddff7"));
-        assert(genesis.hashMerkleRoot == uint256S("0x3f327ba2475176bcf8226b10d871f0f992e17ba9e040ff3dbd11d17c1e5914cb"));
+        auto strGeneisis = consensus.hashGenesisBlock.ToString();
+        LogPrintf("strGeneisis %s\n", strGeneisis);
+        auto strMerkleRoot = genesis.hashMerkleRoot.ToString();
+        LogPrintf("strMerkleRoot %s\n", strMerkleRoot);
+
+        std::ofstream of("./genesis.txt", std::fstream::out);
+        of << "strGeneisis " << strGeneisis << std::endl;
+        of << "strMerkleRoot " << strMerkleRoot << std::endl;
+        of.close();
+
+        assert(consensus.hashGenesisBlock == uint256S("0x32a60d62b7d66cf6d4884189bfb16ec29c3a7452ee8bf61b999b8e4bb55a168e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x718dc105cfe7efafc362fea19719c48bf99e334c88f982f4784583ba8d394d7a"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
